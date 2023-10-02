@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 // Create some alphabet tables
 
@@ -22,11 +23,11 @@ const char AlphabetLower[26] =
 // Recursive function, keeps clocking characters
 // until length is reached
 
-void Generate(unsigned int length, std::string s)
+void Generate(unsigned int length,string s)
 {
 	if(length == 0) // when length has been reached
 	{
-		std::cout << s << "\n"; // print it out
+		cout << s << "\n"; // print it out
 		return;
 	}
 
@@ -34,7 +35,7 @@ void Generate(unsigned int length, std::string s)
 	{
 		// Create new string with next character
 		// Call generate again until string has reached it's length
-		std::string appended = s + AlphabetLower[i];
+		string appended = s + AlphabetLower[i];
 		Generate(length-1, appended);
 	}
 }
@@ -52,7 +53,7 @@ void Crack()
 
 int main()
 {
-	std::cerr << "Attempting to crack...";
+	cerr << "Attempting to crack...";
 	Crack();
 	return 0;
 }
